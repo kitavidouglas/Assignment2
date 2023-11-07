@@ -1,0 +1,56 @@
+#NAME - KITAVI DOUGLAS KIMANI
+#REG NO. - SCT211-0085/2022
+
+
+class CalculatorClass:
+    def __init__(self, a, b):
+        self.a = a
+        self.b = b
+
+    def add(self):
+        return self.a + self.b
+
+    def sub(self):
+        return self.a - self.b
+
+    def multiply(self):
+        return self.a * self.b
+
+    def divide(self):
+        if self.b == 0:
+            return "Cannot divide by zero"
+        return self.a / self.b
+
+    def modulus(self):
+        return self.a % self.b
+
+a = int(input("Enter first number: "))
+b = int(input("Enter second number: ")
+
+obj = CalculatorClass(a, b)
+
+# while True to loop  continuously 
+while True:
+    print("Available operators: +, -, *, /, %")
+    operator = input("Enter operator (or 'q' to quit): ")
+
+    if operator == 'q':
+        break
+
+    if operator in ('+', '-', '*', '/', '%'):
+        if operator == '+':
+            print("Sum is:", obj.add())
+        elif operator == '-':
+            print("Subtraction is:", obj.sub())
+        elif operator == '*':
+            print("Multiplication is:", obj.multiply())
+        elif operator == '/':
+            result = obj.divide()
+            if isinstance(result, str):
+                print(result)
+            else:
+                print("Division is:", result)
+        elif operator == '%':
+            print("The modulus is:", obj.modulus())
+    else:
+        print("Invalid operator. Please try again.")
